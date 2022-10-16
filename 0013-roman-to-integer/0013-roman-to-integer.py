@@ -14,23 +14,23 @@ class Solution:
         while i < total:
             
             if i+1 < total and s[i] == 'I' and s[i + 1] == 'V':
-                    ans += 4
-                    i += 2
+                ans += 4
+                i += 2
             elif i+1 < total and s[i] == 'I' and s[i + 1] == 'X':
-                    ans += 9
-                    i += 2
+                ans += 9
+                i += 2
             elif i+1 < total and s[i] == 'X' and s[i + 1] == 'L':
-                    ans += 40
-                    i += 2
+                ans += 40
+                i += 2
             elif i+1 < total and s[i] == 'X' and s[i + 1] == 'C':
                 ans += 90
                 i += 2
             elif i+1 < total and s[i] == 'C' and s[i + 1] == 'D':
-                    ans += 400
-                    i += 2
+                ans += 400
+                i += 2
             elif i+1 < total and s[i] == 'C' and s[i + 1] == 'M':
-                    ans += 900
-                    i += 2
+                ans += 900
+                i += 2
             else:
                 ans += roman2integer_dict[s[i]]
                 i += 1
