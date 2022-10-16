@@ -3,38 +3,20 @@ class Solution:
         a, b, c = 0, 0, 0
         stack_l = list()
         for ch in s:
+            if ch in ['(', '{', '[']:
+                stack_l.append(ch)
+            elif ch in [')', '}', ']']:
+                if len(stack_l) == 0:
+                    return False
+                
+                if ch == ')':
+                    open_c = '('
+                elif ch == '}':
+                    open_c = '{'
+                elif ch == ']':
+                    open_c = '['
             
-            if ch =='(':
-                stack_l.append('(')
-            elif ch =='{':
-                stack_l.append('{')
-            elif ch =='[':
-                stack_l.append('[')
-                
-            elif ch ==')':
-                
-                if len(stack_l) == 0:
-                    return False
-                
-                if stack_l[-1] == '(':
-                    stack_l.pop()
-                else:
-                    return False
-            elif ch =='}':
-
-                if len(stack_l) == 0:
-                    return False
-                
-                if stack_l[-1] == '{':
-                    stack_l.pop()
-                else:
-                    return False
-            elif ch == ']':
-                
-                if len(stack_l) == 0:
-                    return False
-                
-                if stack_l[-1] == '[':
+                if stack_l[-1] == open_c:
                     stack_l.pop()
                 else:
                     return False
