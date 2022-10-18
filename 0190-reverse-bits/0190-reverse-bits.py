@@ -3,9 +3,6 @@ class Solution:
         ans = 0
         for i in range(32, -1, -1):
             if n & 1 << i:
-                ans = ans | 1 << 31 - i 
-            else:
-                pass
-        
+                ans = ans | 1 << 31 - i         
         return ans
         
