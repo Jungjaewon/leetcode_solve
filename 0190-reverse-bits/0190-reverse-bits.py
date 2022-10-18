@@ -1,10 +1,13 @@
 class Solution:
     def reverseBits(self, n: int) -> int:
+        return sum(bool( 1 << (31 - j) & n) * (2 ** j) for j in range(31, -1, -1))
+        """
         ans = 0
         for i in range(31, -1, -1):
             if n & 1 << i:
                 ans = ans | 1 << 31 - i         
         return ans
+        """
         # return sum(bool(2 ** i & n) * (2 ** j) for i, j in zip(range(32), range(31, -1, -1)))
         """
         out = 0, n = 1101101
