@@ -1,11 +1,15 @@
 class Solution:
     def arrangeCoins(self, n: int) -> int:
-        cnt = 1
-        while True:
+        left, right = 0, n
+        
+        while left <= right:
+            k = (left + right) // 2
+            curr = k * (k + 1) // 2
             
-            if n >= cnt:
-                n = n - cnt
-                cnt += 1
+            if n == curr:
+                return k
+            elif n < curr:
+                right = k - 1
             else:
-                break
-        return cnt -1
+                left = k + 1
+        return right
