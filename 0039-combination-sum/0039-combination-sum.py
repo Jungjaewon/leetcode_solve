@@ -3,8 +3,7 @@ import copy
 
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        Q, ans = queue.Queue(), list()
-        ret = list()
+        Q, ans, ret = queue.Queue(), list(), list()
         
         for c in candidates:
             Q.put([c])
