@@ -24,5 +24,5 @@ class Solution:
         ans = [sorted(x) for x in ans]
         for candi in ans:
             if candi not in ret:
-                ret.append(list(candi))
+                ret.append(candi)
         return ret
