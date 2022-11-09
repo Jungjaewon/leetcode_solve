@@ -18,9 +18,9 @@ class Solution:
             else:
                 for c in candidates:
                     if not temp_sum + c > target:
-                        temp_copy = copy.deepcopy(temp)
-                        temp_copy.append(c)
-                        Q.put(temp_copy)
+                        #temp_copy = copy.deepcopy(temp)
+                        #temp_copy.append(c)
+                        Q.put([*temp, c])
                         
         ans = [sorted(x) for x in ans]
         for candi in ans:
