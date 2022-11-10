@@ -10,17 +10,15 @@ from collections import defaultdict
 class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
         result_dict, result_list = defaultdict(list), list()
-        
         def helper(result_list, depth, root:Optional[TreeNode]):
-            
             if root is None:
                 return
             else:
                 result_list.append([depth, root.val])
-                if root.left:
-                    helper(result_list, depth + 1, root.left)
-                if root.right:
-                    helper(result_list, depth + 1, root.right)
+                #if root.left:
+                helper(result_list, depth + 1, root.left)
+                #if root.right:
+                helper(result_list, depth + 1, root.right)
         helper(result_list, 0, root)
         for depth, val in result_list:
             result_dict[depth].append(val)
