@@ -6,9 +6,32 @@
 #         self.right = right
 
 from collections import defaultdict
+from queue import Queue
 
 class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0
+        else:
+            q = Queue()
+            q.put(root)
+            while q.qsize():
+                q_size, sum_v = q.qsize(), 0
+                for _ in range(q_size):
+                    temp = q.get()
+                    sum_v += temp.val
+                    if temp.left:
+                        q.put(temp.left)
+                    if temp.right:
+                        q.put(temp.right)
+            
+                if q.qsize() == 0:
+                    return sum_v
+                    
+                
+                
+                
+        """
         max_d, sum_v = [0], [0]
         def helper(depth,  root:Optional[TreeNode]):
             if root is None:
@@ -22,6 +45,7 @@ class Solution:
             helper(depth + 1, root.right)
         helper(0, root)
         return sum_v[0]
+        """
         """
         result_dict, result_list = defaultdict(list), list()
         def helper(result_list, depth, root:Optional[TreeNode]):
