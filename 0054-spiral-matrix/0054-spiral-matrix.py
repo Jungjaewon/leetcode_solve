@@ -1,11 +1,10 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        visited, ans = [[False] * len(matrix[0]) for _ in range(len(matrix))], list()
         m, n = len(matrix), len(matrix[0])
+        visited, ans = [[False] * n for _ in range(m)], list()
         dir_dict = {0 : [0,1], 1 : [1, 0], 2 : [0, -1], 3 : [-1, 0]}
         ch_dict = {0 : 1, 1 : 2, 2 :3, 3: 0}
         cur_dir, x, y, cnt = 0, 0, 0, 0
-        
         while cnt < m * n:
             #print(f'x : {x}, y : {y}')
             visited[x][y] = True
