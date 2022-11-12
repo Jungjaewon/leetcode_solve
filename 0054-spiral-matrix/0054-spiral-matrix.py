@@ -1,5 +1,8 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        return matrix and [*matrix.pop(0)] + self.spiralOrder([*zip(*matrix)][::-1])
+        #https://leetcode.com/problems/spiral-matrix/discuss/20571/1-liner-in-Python-%2B-Ruby
+        """
         m, n = len(matrix), len(matrix[0])
         visited, ans = [[False] * n for _ in range(m)], list()
         dir_dict = {0 : [0,1], 1 : [1, 0], 2 : [0, -1], 3 : [-1, 0]}
@@ -22,4 +25,5 @@ class Solution:
             
             cnt += 1
         return ans
+        """
         
