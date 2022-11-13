@@ -4,7 +4,7 @@ class Solution:
         visited, history = [False] * m, [0]
         def dfs(node):
             if m - 1 == node:
-                ans.append([*history])
+                ans.append(history[:])
                 return
             else:
                 for dest in graph[node]:
