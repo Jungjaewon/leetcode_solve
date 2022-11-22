@@ -5,6 +5,21 @@
 #         self.next = next
 class Solution:
     def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        ans = ListNode()
+        temp, temp_v = ans, 0  
+        while head:
+            if head.val == 0:
+                if temp_v != 0:
+                    temp.val = temp_v
+                    if head.next is not None:
+                        temp.next = ListNode()
+                    temp = temp.next
+                temp_v = 0
+            else:
+                temp_v += head.val
+            head = head.next
+        return ans
+        """
         ans_list, ans = list(), ListNode()
         temp, temp_v = ans, 0
         #head = head.next 
@@ -23,4 +38,5 @@ class Solution:
             temp = temp.next
             
         return ans
+        """
         
