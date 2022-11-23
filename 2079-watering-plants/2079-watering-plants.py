@@ -2,12 +2,10 @@ class Solution:
     def wateringPlants(self, plants: List[int], capacity: int) -> int:
         
         done, idx, steps = 0, 0, 0
-        river = -1
-        cur_cap = capacity
+        cur_cap, river = capacity, -1
         while done < len(plants):
             #print(f'done : {done}')
             s_idx, temp_sum = idx, plants[idx]
-            
             while idx + 1 < len(plants) and temp_sum + plants[idx + 1] < cur_cap:
                 temp_sum += plants[idx + 1]
                 idx += 1
