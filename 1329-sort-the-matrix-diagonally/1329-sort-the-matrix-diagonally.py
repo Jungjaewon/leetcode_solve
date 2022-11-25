@@ -1,9 +1,20 @@
 class Solution:
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
+        m, n = len(mat), len(mat[0])
+        d = defaultdict(list)
+        for i in range(m):
+            for j in range(n):
+                d[i - j].append(mat[i][j])
+        for k in d:
+            d[k].sort(reverse=True)
+        for i in range(m):
+            for j in range(n):
+                mat[i][j] = d[i - j].pop()
+        return mat
+        # https://leetcode.com/problems/sort-the-matrix-diagonally/discuss/2493662/PythonororC%2B%2BEasiest-approachDetailed-Explanation-or-Beginner-friendly-or-Easy-understand
+        """
         n, m = len(mat), len(mat[0])
         #print(n,m)
-        ans = [[0 for _ in range(m)] for _ in range(n)]
-        
         coordinate = [[0, x] for x in range(m)]
         for x in range(n - 1):
             coordinate.append([0, x - n + 1])
@@ -27,6 +38,7 @@ class Solution:
                 x, y = xy
                 mat[x][y] = digit
         return mat
+        """
             
         
         
