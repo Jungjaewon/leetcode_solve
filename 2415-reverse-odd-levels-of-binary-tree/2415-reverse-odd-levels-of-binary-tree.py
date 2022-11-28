@@ -15,7 +15,8 @@ class Solution:
             temp_list = list()
             for _ in range(Q.qsize()):
                 node = Q.get()
-                temp_list.append(node)
+                if depth & 1 == 1:
+                    temp_list.append(node)
                 if node.left:
                     Q.put(node.left)
                 if node.right:
