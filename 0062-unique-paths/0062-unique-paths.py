@@ -1,6 +1,7 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        
+        return math.factorial(m - 1 + n - 1) // (math.factorial(m - 1) * math.factorial(n - 1))
+        """
         ans = [[0 for _ in range(n)] for _ in range(m)]
         for i in range(m):
             ans[i][0] = 1
@@ -12,6 +13,7 @@ class Solution:
             for j in range(1, n):
                 ans[i][j] = ans[i -1][j] + ans[i][j - 1]
         return ans[m - 1][n - 1]
+        """
         """
         from queue import Queue
         Q, ans = Queue(), 0
