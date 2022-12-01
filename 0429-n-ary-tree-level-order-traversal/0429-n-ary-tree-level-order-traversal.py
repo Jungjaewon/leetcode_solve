@@ -8,6 +8,21 @@ class Node:
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
+        from collections import defaultdict
+        ans, ans_dict = list(), defaultdict(list)
+        
+        def dfs(level:int, root: 'Node'):
+            if root is None:
+                return 
+            else:
+                ans_dict[level].append(root.val)
+                for node in root.children:
+                    dfs(level + 1, node)
+        dfs(0, root)
+        for level in sorted(list(ans_dict.keys())):
+            ans.append(ans_dict[level])
+        return ans
+        """
         from queue import Queue
         Q, ans = Queue(), list()
         
@@ -23,4 +38,5 @@ class Solution:
                     Q.put(n_c)
             ans.append(temp_l)    
         return ans
+        """
         
