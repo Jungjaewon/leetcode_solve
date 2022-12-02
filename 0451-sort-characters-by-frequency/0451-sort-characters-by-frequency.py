@@ -1,5 +1,12 @@
 class Solution:
     def frequencySort(self, s: str) -> str:
+        from collections import Counter
+        result_cnt, s = Counter(s), ""
+        for x in result_cnt.most_common():
+            for _ in range(x[1]):
+                s += x[0]
+        return s
+        """
         from collections import defaultdict
         ans_dict, ans = defaultdict(int), list()
         for c in s:
@@ -10,4 +17,5 @@ class Solution:
             for _ in range(x[1]):
                 ans.append(x[0])
         return ''.join(ans)
+        """
         
