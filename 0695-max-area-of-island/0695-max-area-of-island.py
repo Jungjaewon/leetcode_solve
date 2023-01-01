@@ -1,5 +1,20 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        dir_xy = [[0,1],[0,-1],[1,0],[-1,0]]
+        m, n, ans  = len(grid), len(grid[0]), 0
+        def dfs(x,y):
+            grid[x][y], temp_area = 0, 1
+            for dx, dy in dir_xy:
+                nx, ny = x + dx, y + dy
+                if -1 < nx and nx < m and -1 < ny and ny < n and grid[nx][ny] == 1:
+                    temp_area += dfs(nx, ny)
+            return temp_area
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    ans = max(ans, dfs(i, j))
+        return ans
+        """
         dir_xy, ans = [[0,1],[0,-1],[1,0],[-1,0]], [-10e4]
         m, n  = len(grid), len(grid[0])
         visited = [[False] * n for _ in range(m)]
@@ -17,6 +32,7 @@ class Solution:
                     dfs(i, j)
                     ans[0] = max(ans[0], temp_area[0])
         return ans[0] if ans[0] != -10e4 else 0
+        """
                     
         """
         from queue import Queue
