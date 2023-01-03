@@ -1,5 +1,7 @@
 class Solution:
     def isStrictlyPalindromic(self, n: int) -> bool:
+        return False
+        """
         def numberToBase(n, b):
             if n == 0:
                 return '0'
@@ -13,3 +15,4 @@ class Solution:
             if s_n != s_n[::-1]:
                 return False
         return True
+        """
