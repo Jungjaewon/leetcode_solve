@@ -16,3 +16,4 @@ class Solution:
                 return False
         return True
         """
+        #https://stackoverflow.com/questions/2267362/how-to-convert-an-integer-to-a-string-in-any-base
