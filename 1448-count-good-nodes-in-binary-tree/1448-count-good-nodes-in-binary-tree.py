@@ -19,9 +19,8 @@ class Solution:
             
             path.append(node.val)
             helper(node.left, path)
-            path.pop()
-            
-            path.append(node.val)
+            #path.pop()
+            #path.append(node.val)
             helper(node.right, path)
             path.pop()
         helper(root, [])
