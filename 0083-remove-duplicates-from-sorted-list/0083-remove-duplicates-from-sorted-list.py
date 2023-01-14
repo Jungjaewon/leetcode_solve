@@ -5,6 +5,13 @@
 #         self.next = next
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        temp = head
+        while temp:
+            while temp.next and temp.val == temp.next.val:
+                temp.next = temp.next.next
+            temp = temp.next
+        return head
+        """
         if head is None:
             return None
         ans_set, ans = set(), ListNode()
@@ -19,5 +26,6 @@ class Solution:
                 temp.next = ListNode()
                 temp = temp.next
         return ans
+        """
             
         
