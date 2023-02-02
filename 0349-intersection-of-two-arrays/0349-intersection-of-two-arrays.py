@@ -1,8 +1,11 @@
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         #return list(set(nums1).intersection(nums2))
+        """
         ans = list()
         for n in nums1:
             if n in nums2:
                 ans.append(n)
         return list(set(ans))
+        """
+        return list({n for n in nums1 if n in nums2})
