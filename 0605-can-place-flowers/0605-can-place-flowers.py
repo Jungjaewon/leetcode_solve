@@ -7,10 +7,8 @@ class Solution:
             return num
         
         while idx < len(flowerbed):
-            
             if n == 0:
                 break
-            
             if flowerbed[idx] == 1:
                 pass
             else:
