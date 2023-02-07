@@ -5,5 +5,5 @@ class Solution:
             key = sum([int(n) for n in str(i)])
             hash_dict[key] += 1
         
-        return max([value for key, value in hash_dict.items()])
+        return max([value for _, value in hash_dict.items()])
         
