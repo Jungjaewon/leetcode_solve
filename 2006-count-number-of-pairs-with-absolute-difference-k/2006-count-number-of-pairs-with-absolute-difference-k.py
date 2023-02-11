@@ -8,6 +8,8 @@ class Solution:
                     ans += 1
         return ans
         """
+        # https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/discuss/1471015/Python-Clean-and-concise.-Dictionary-T.C-O(N)
+        # https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/discuss/2552609/Python-Faster-than-99
         ans, seen = 0, defaultdict(int)
         for n in nums:
             seen[n] += 1
