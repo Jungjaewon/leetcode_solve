@@ -14,6 +14,7 @@ class Solution:
                 ans.append([1, *temp, 1])
             return ans
         """
+        """
         if numRows >= 3:
             ans = [[1],[1,1]]
             for i in range(numRows - 2):
@@ -24,3 +25,14 @@ class Solution:
             return ans
         else:
             return [[1]] if numRows == 1 else [[1],[1,1]]
+        """
+        ans = list()
+        for row in range(1, numRows + 1):
+            if len(ans) == 0:
+                ans.append([1])
+            else:
+                temp = list()
+                for i in range(len(ans[-1]) - 1):
+                    temp.append(ans[-1][i] + ans[-1][i + 1])
+                ans.append([1,*temp,1])
+        return ans
