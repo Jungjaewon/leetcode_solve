@@ -9,8 +9,14 @@ class Solution:
             ans += matches
         return ans
         """
+        """
         ans = 0
         while n != 1:
             ans += n // 2
             n = n - (n // 2)
+        return ans
+        """
+        ans = 0
+        while n != 1:
+            ans, n = ans + n // 2, n - (n // 2)
         return ans
