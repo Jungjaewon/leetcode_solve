@@ -19,7 +19,5 @@ class Solution:
         return True
         """
         a_list = [value for _, value in dict(Counter(s)).items()]
-        print(a_list)
-        print([a_list[x] != a_list[0] for x in range(1, len(a_list))])
         return all([a_list[x] == a_list[0] for x in range(1, len(a_list))])
         
