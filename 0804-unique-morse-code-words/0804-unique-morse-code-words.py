@@ -15,6 +15,7 @@ class Solution:
             result.add(''.join(transed))
         return len(result)
         """
+        """
         morse = [".-","-...","-.-.","-..",".","..-.","--.","....",
                  "..",".---","-.-",".-..","--","-.","---",".--.","--.-",
                  ".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
@@ -25,4 +26,10 @@ class Solution:
                 transed.append(morse[ord(c) - ord('a')])
             result.add(''.join(transed))
         return len(result)
+        """
+        morse = [".-","-...","-.-.","-..",".","..-.","--.","....",
+                 "..",".---","-.-",".-..","--","-.","---",".--.","--.-",
+                 ".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        return len({''.join([morse[ord(c) - ord('a')] for c in word]) for word in words })
+            
                 
