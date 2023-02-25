@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
+        """
         ans = [10e4]
         def func(depth:int, root: Optional[TreeNode]):
             if root is None:
@@ -18,3 +19,17 @@ class Solution:
                 func(depth + 1, root.right)
         func(1, root)
         return ans[0] if ans[0] != 10e4 else 0
+        """
+        
+        if root is None:
+            return 0
+        else:
+            def func(depth:int,  node: Optional[TreeNode]):
+                
+                if node is None:
+                    return 10e4
+                elif node.left is None and node.right is None:
+                    return depth
+                else:
+                    return min(func(depth + 1, node.left), func(depth + 1, node.right))
+            return func(1, root)
