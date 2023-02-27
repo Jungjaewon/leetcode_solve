@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
+        """
         if root is None:
             return False
         def helper(node : Optional[TreeNode]) -> bool:
@@ -17,5 +18,19 @@ class Solution:
                 else:
                     return helper(node.left) & helper(node.right)
         return helper(root)
+        """
+        
+        if root is None:
+            return False
+        else:
+            if root.left is None and root.right is None:
+                return root.val
+            if root.val == 2:
+                return self.evaluateTree(root.left) | self.evaluateTree(root.right)
+            else:
+                return self.evaluateTree(root.left) & self.evaluateTree(root.right)
+            
+        
+        
                 
         
