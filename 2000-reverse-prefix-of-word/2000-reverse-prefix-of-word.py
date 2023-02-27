@@ -8,8 +8,14 @@ class Solution:
             ret = word[:idx + 1]
             return word.replace(ret, ret[::-1])
         """
+        """
         if ch not in word:
             return word
         else:
             ret = word[:word.index(ch) + 1]
             return word.replace(ret, ret[::-1])
+        """
+        if ch not in word:
+            return word
+        else:
+            return word.replace(word[:word.index(ch) + 1], word[:word.index(ch) + 1][::-1])
