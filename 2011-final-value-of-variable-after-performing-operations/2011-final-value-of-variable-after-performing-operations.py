@@ -9,7 +9,10 @@ class Solution:
                 ans += 1
         return ans
         """
+        """
         ans = 0
         for op in operations:
             ans = ans + 1 if '+' in op else ans - 1
         return ans
+        """
+        return sum([1 if '+' in op else -1 for op in operations])
