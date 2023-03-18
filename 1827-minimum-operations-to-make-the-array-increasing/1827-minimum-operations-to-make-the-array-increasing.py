@@ -3,6 +3,7 @@ class Solution:
         ans = 0
         for i in range(len(nums) - 1):
             if nums[i] >= nums[i + 1]:
-                ans += abs(nums[i] - nums[i + 1]) + 1
-                nums[i + 1] = nums[i + 1] + abs(nums[i] - nums[i + 1]) + 1
+                gap = abs(nums[i] - nums[i + 1]) + 1
+                ans += gap
+                nums[i + 1] = nums[i + 1] + gap
         return ans
