@@ -8,11 +8,21 @@ class Solution:
             a_dict[idx] +=n
         return [[idx, a_dict[idx]] for idx in sorted(a_dict.keys())]
         """
+        """
         a_dict = defaultdict(int)
         for idx, n in nums1:
             a_dict[idx] += n
         for idx, n in nums2:
             a_dict[idx] +=n
         return [[idx, a_dict[idx]] for idx in sorted(a_dict.keys())]
+        """
+        ans_l, a_dict = list(), defaultdict(int)
+        for idx, n in nums1:
+            a_dict[idx] += n
+        for idx, n in nums2:
+            a_dict[idx] +=n
+        for idx in sorted(a_dict.keys()):
+            ans_l.append([idx, a_dict[idx]])
+        return ans_l
         
         
