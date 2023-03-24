@@ -24,6 +24,7 @@ class Solution:
                 nums = nums[:-1]
         return ans
         """
+        """
         ans = 0
         if len(nums) & 1 == 1:
             mid = (len(nums) // 2)
@@ -34,5 +35,17 @@ class Solution:
             ans += int(str(nums[i]) + str(nums[j]))
             i,j = i + 1, j - 1
         return ans
+        """
+        ans = 0
+        if len(nums) & 1 == 1:
+            mid = (len(nums) // 2)
+            ans += nums[mid]
+            del nums[mid]    
+        for a,b in list(zip(nums, nums[::-1]))[:len(nums) // 2]:
+            ans += int(str(a) + str(b))
+        return ans
+        
+        
+        
         
             
