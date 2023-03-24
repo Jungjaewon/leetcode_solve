@@ -12,6 +12,7 @@ class Solution:
                 del nums[-1]
         return ans
         """
+        """
         ans = 0
         while len(nums):
             if len(nums) == 1:
@@ -22,3 +23,16 @@ class Solution:
                 nums = nums[1:]
                 nums = nums[:-1]
         return ans
+        """
+        ans = 0
+        if len(nums) & 1 == 1:
+            mid = (len(nums) // 2)
+            ans += nums[mid]
+            del nums[mid]
+        i,j = 0, len(nums) - 1
+        while i < j:
+            ans += int(str(nums[i]) + str(nums[j]))
+            i,j = i + 1, j - 1
+        return ans
+        
+            
