@@ -4,7 +4,6 @@ class Solution:
         for c in num:
             a_dict[int(c)] += 1
         for idx, c in enumerate(num):
-            #print(f'c : {c}, {a_dict[idx]}, idx : {idx}')
             if int(c) != a_dict[idx]:
                 return False
         return True
