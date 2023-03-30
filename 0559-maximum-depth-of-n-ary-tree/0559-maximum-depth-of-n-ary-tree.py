@@ -8,6 +8,7 @@ class Node:
 
 class Solution:
     def maxDepth(self, root: 'Node') -> int:   
+        """
         if root is None:
             return 0
         else:
@@ -24,6 +25,21 @@ class Solution:
                             q.put(ch)
                 ans += 1
             return ans
+        """
+        ans = 0
+        from queue import Queue
+        q = Queue()
+        if root:
+            q.put(root)
+        while q.qsize():
+            qsize = q.qsize()
+            for _ in range(qsize):
+                node = q.get()
+                for ch in node.children:
+                    if ch:
+                        q.put(ch)
+            ans += 1
+        return ans
         
         
         
