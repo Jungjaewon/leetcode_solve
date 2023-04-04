@@ -47,8 +47,6 @@ class Solution:
             word2_list = word2_list[:len(word1_list)]
         for a,b in zip(word1_list, word2_list):
             ans.append(a + b)
-        print(ans)
-        print(ret)
         return ''.join(ans) + (''.join(ret) if len(ret) else '')
         
         
