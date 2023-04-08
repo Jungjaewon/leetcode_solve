@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def isUnivalTree(self, root: Optional[TreeNode]) -> bool:
+        """
         ans = list()
         def func(root:Optional[TreeNode]):
             if root is None:
@@ -16,3 +17,10 @@ class Solution:
                 func(root.right)
         func(root)
         return len(set(ans)) == 1
+        """
+        def func(root:Optional[TreeNode]):
+            if root is None:
+                return []
+            else:
+                return [root.val] + func(root.left) + func(root.right)
+        return len(set(func(root))) == 1
