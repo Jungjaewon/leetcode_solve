@@ -3,7 +3,6 @@ class Solution:
         for c in "!?',;.":
             paragraph = paragraph.replace(c, " ")
         para_dict = dict(Counter(paragraph.lower().split(' ')))
-        print(para_dict)
         if '' in para_dict: 
             del para_dict['']
         for b in banned:
