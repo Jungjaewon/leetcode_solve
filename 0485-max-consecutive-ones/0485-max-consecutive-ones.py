@@ -16,9 +16,7 @@ class Solution:
             if n == 1:
                 temp.append(1)
             else:
-                print(len(temp))
                 ans_l.append(temp)
                 temp = list()
         ans_l.append(temp)
-        print([len(x) for x in ans_l])
         return max([len(x) for x in ans_l])
