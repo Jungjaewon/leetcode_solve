@@ -20,6 +20,7 @@ class Solution:
             ans.append(max_v)
         return ans
         """
+        """
         ans, max_v = list(), -1
         arr = arr[::-1]
         for idx, n in enumerate(arr):
@@ -27,5 +28,11 @@ class Solution:
                 ans.append(-1)
             else:
                 ans.append(max_v)
+            max_v = max(max_v, n)
+        return ans[::-1]
+        """
+        ans, max_v = list(), -1
+        for idx, n in enumerate(arr[::-1]):
+            ans.append(max_v)
             max_v = max(max_v, n)
         return ans[::-1]
