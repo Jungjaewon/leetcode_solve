@@ -10,7 +10,6 @@ class Solution:
                     cnt = 0
             max_v = max(max_v, cnt)
             return max_v
-        print(func(s,'1'), func(s,'0'))
         return func(s,'1') > func(s,'0')
     
             
