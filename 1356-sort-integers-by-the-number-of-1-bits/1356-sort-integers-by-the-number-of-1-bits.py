@@ -16,4 +16,5 @@ class Solution:
         else:
             return sorted(arr, key=lambda x : (func(x), x))
         """
-        return sorted(arr, key=lambda x : (sum([1 for i in range(32) if x & 1 << i]), x))
+        #return sorted(arr, key=lambda x : (sum([1 for i in range(32) if x & 1 << i]), x))
+        return sorted(arr, key=lambda x : (bin(x).count('1'), x))
