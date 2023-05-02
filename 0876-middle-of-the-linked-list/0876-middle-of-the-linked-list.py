@@ -5,6 +5,7 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        """
         cnt, t_cnt = 0, 0
         temp = head
         while temp:
@@ -15,6 +16,19 @@ class Solution:
         temp = head
         while temp:
             if mid == t_cnt:
+                return temp
+            temp = temp.next
+            t_cnt += 1 
+        return None
+        """
+        cnt, t_cnt = 0, 0
+        temp = head
+        while temp:
+            temp = temp.next
+            cnt += 1
+        temp = head
+        while temp:
+            if (cnt // 2) == t_cnt:
                 return temp
             temp = temp.next
             t_cnt += 1 
