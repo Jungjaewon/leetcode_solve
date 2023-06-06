@@ -8,7 +8,12 @@ class Solution:
                 ans += 1
         return ans
         """
-        return sum([1 for col in list(zip(*strs)) if list(col) != sorted(col)])
+        #return sum([1 for col in list(zip(*strs)) if list(col) != sorted(col)])
+        ans = 0
+        for col in list(zip(*strs)):
+            if list(col) != sorted(col):
+                ans += 1
+        return ans
         
         
         
