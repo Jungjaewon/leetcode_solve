@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
+        """
         ans_list = list()
         def func(root: Optional[TreeNode], s_l : list):
             nonlocal ans_list
@@ -18,6 +19,20 @@ class Solution:
                 func(root.left, copy.deepcopy(s_l))
                 func(root.right, copy.deepcopy(s_l))
         func(root, [])
+        return ans_list
+        """
+        ans_list = list()
+        def func(root: Optional[TreeNode], s : str):
+            nonlocal ans_list
+            if root is None:
+                return
+            else:
+                s = f'{s},{root.val}'
+                if root.left is None and root.right is None:
+                    ans_list.append('->'.join(s.split(',')[1:]))
+                func(root.left, s)
+                func(root.right, s)
+        func(root, "")
         return ans_list
                 
         
