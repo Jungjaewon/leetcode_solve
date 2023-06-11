@@ -6,12 +6,27 @@
 #         self.right = right
 class Solution:
     def sumRootToLeaf(self, root: Optional[TreeNode]) -> int:
+        """
         ans_list = list()
         def func(root: Optional[TreeNode], s : str):
             if root is None:
                 return
             else:
                 s = f'{s}{root.val}'
+                if root.left is None and root.right is None:
+                    ans_list.append(s)
+                else:
+                    func(root.left, s)
+                    func(root.right, s)
+        func(root, "")
+        return sum([int(x, 2) for x in ans_list])
+        """
+        ans_list = list()
+        def func(root: Optional[TreeNode], s : str):
+            if root is None:
+                return
+            else:
+                s += str(root.val)
                 if root.left is None and root.right is None:
                     ans_list.append(s)
                 else:
