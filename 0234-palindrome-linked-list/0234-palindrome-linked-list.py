@@ -23,6 +23,7 @@ class Solution:
             else:
                 return False
         """
+        """
         a_list = list()
         while head:
             a_list.append(head.val)
@@ -38,3 +39,15 @@ class Solution:
                 return True
             else:
                 return False
+        """
+        a_list = list()
+        while head:
+            a_list.append(head.val)
+            head = head.next
+        i, j = 0, len(a_list) - 1
+        
+        while not i > j:
+            if a_list[i] != a_list[j]:
+                return False
+            i, j = i + 1, j -1
+        return True
