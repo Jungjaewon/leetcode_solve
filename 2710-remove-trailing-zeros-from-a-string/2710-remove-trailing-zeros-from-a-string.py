@@ -9,4 +9,14 @@ class Solution:
                 break
         return ''.join(n_list[cnt:][::-1])
         """
+        """
         return num.rstrip('0')
+        """
+        n_list = list(num)
+        for idx in range(len(n_list) - 1, 0,-1):
+            if n_list[idx] == '0':
+                n_list[idx] = ''
+            else:
+                break
+        return ''.join(n_list)
+        
