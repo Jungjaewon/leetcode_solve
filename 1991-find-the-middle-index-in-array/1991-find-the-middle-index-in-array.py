@@ -21,6 +21,7 @@ class Solution:
                     return idx
         return -1
         """
+        """
         if len(nums) == 1:
             return 0
         else:
@@ -34,4 +35,16 @@ class Solution:
                     print(idx, left, right)
                     if left == right:
                         return idx
+        return -1
+        """
+        left, right = 0, sum(nums[1:])
+        if left == right:
+            return 0
+        else:
+            for idx in range(1, len(nums)):
+                left += nums[idx - 1]
+                right -= nums[idx]
+                #print(idx, left, right)
+                if left == right:
+                    return idx
         return -1
