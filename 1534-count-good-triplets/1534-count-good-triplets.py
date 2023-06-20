@@ -9,10 +9,21 @@ class Solution:
                         ans.append((arr[i],arr[j],arr[k]))
         return len(ans)
         """
+        """
         ans = 0
         for i in range(len(arr)):
             for j in range(i + 1, len(arr)):
                 for k in range(j + 1, len(arr)):
                     if abs(arr[i] - arr[j]) <= a and abs(arr[j] - arr[k]) <= b and abs(arr[i] - arr[k]) <= c:
+                        ans += 1
+        return ans
+        """
+        ans = 0
+        for i in range(len(arr)):
+            for j in range(i + 1, len(arr)):
+                if not abs(arr[i] - arr[j]) <= a:
+                    continue
+                for k in range(j + 1, len(arr)):
+                    if abs(arr[j] - arr[k]) <= b and abs(arr[i] - arr[k]) <= c:
                         ans += 1
         return ans
