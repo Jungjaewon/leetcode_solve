@@ -16,6 +16,8 @@ class Solution:
         else:
             return True
         """
-        return False if str(num)[-1] == '0' and len(str(num)) > 1 else True
+        #return False if str(num)[-1] == '0' and len(str(num)) > 1 else True
+        s_num = str(num)
+        return False if s_num[-1] == '0' and len(s_num) > 1 else True
         
         
