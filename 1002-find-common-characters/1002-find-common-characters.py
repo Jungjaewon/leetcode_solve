@@ -28,8 +28,6 @@ class Solution:
                     break
                 elif num > c_words[idx][c]:
                     num = c_words[idx][c]
-                    #flag = False
-                    #break
             if flag:
                 for _ in range(num):
                     ans.append(c)
