@@ -25,6 +25,7 @@ class Solution:
                     cnt -= 1
             return -1
         """
+        """
         def get_sum(k):
             return k * (k + 1) // 2
         for idx in range(1, n + 1):
@@ -32,7 +33,16 @@ class Solution:
             right_sum = get_sum(n) - left_sum + idx
             if left_sum == right_sum:
                 return idx
-        return -1    
+        return -1
+        """
+        def get_sum(k):
+            return k * (k + 1) // 2
+        for idx in range(1, n + 1):
+            left_sum = idx * (idx + 1) // 2
+            right_sum = n * (n + 1) // 2 - left_sum + idx
+            if left_sum == right_sum:
+                return idx
+        return -1
         
                 
                 
