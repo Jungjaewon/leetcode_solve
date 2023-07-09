@@ -10,6 +10,7 @@ class Solution:
                     return num_l[idx]
             return -1
         """
+        """
         num_l = list(range(1, n + 1))
         if len(num_l) == 1:
             return n
@@ -23,6 +24,15 @@ class Solution:
                     a, b = a - cnt, b + cnt
                     cnt -= 1
             return -1
+        """
+        def get_sum(k):
+            return k * (k + 1) // 2
+        for idx in range(1, n + 1):
+            left_sum = get_sum(idx)
+            right_sum = get_sum(n) - left_sum + idx
+            if left_sum == right_sum:
+                return idx
+        return -1    
         
                 
                 
