@@ -19,7 +19,6 @@ class Solution:
         return [ans_idx, cnt]
         """
         mat = [ [idx, sum(row)] for idx, row in enumerate(mat)]
-        print(sorted(mat, key=lambda x : (-x[0], x[1])))
         return sorted(mat, key=lambda x : (x[1], -x[0]))[-1]
             
             
