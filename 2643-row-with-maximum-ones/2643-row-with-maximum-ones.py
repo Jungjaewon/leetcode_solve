@@ -9,6 +9,7 @@ class Solution:
                 ans_idx = idx   
         return [ans_idx, cnt]
         """
+        """
         ans_idx, cnt = 0, -10e4
         for idx, row in enumerate(mat):
             one_cnt = sum(row)
@@ -16,5 +17,9 @@ class Solution:
                 cnt = one_cnt
                 ans_idx = idx   
         return [ans_idx, cnt]
+        """
+        mat = [ [idx, sum(row)] for idx, row in enumerate(mat)]
+        print(sorted(mat, key=lambda x : (-x[0], x[1])))
+        return sorted(mat, key=lambda x : (x[1], -x[0]))[-1]
             
             
