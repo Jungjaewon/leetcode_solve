@@ -18,7 +18,10 @@ class Solution:
                 ans_idx = idx   
         return [ans_idx, cnt]
         """
+        """
         mat = [ [idx, sum(row)] for idx, row in enumerate(mat)]
         return sorted(mat, key=lambda x : (x[1], -x[0]))[-1]
+        """
+        return sorted([[idx, sum(row)] for idx, row in enumerate(mat)], key=lambda x : (x[1], -x[0]))[-1]
             
             
