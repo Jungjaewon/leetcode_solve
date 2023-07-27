@@ -13,10 +13,21 @@ class Solution:
                 even_cnt += 1
         return ans
         """
+        """
         odd_l, even_l = [n for n in nums if n & 1 == 1], [n for n in nums if n & 1 == 0]
         ans = list()
         for e, o in zip(even_l, odd_l):
             ans.append(e)
             ans.append(o)
+        return ans
+        """
+        o_cnt, e_cnt, ans = 1,0, [0] * len(nums)
+        for n in nums:
+            if n & 1 == 1:
+                ans[o_cnt] = n
+                o_cnt += 2
+            else:
+                ans[e_cnt] = n
+                e_cnt += 2
         return ans
         
