@@ -39,12 +39,13 @@ class Solution:
         for i in range(n):
             for j in range(m):
                 xy = f'{i}_{j}'
-                if xy in dig_list and grid[i][j] > 0:
-                    pass
-                elif xy not in dig_list and grid[i][j] == 0:
-                    pass
+                if xy in dig_list:
+                    if grid[i][j] == 0:
+                        return False
                 else:
-                    return False
+                    if grid[i][j] > 0:
+                        return False
+                    
         return True
         
             
