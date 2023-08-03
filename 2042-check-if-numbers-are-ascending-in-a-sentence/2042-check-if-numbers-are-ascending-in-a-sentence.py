@@ -11,8 +11,17 @@ class Solution:
                 return False
         return True
         """
+        """
         base = -1
         for idx, n in enumerate([int(w) for w in s.split() if w.isdigit()]):
+            if not base < n:
+                return False
+            else:
+                base = n
+        return True
+        """
+        base = -1
+        for n in [int(w) for w in s.split() if w.isdigit()]:
             if not base < n:
                 return False
             else:
