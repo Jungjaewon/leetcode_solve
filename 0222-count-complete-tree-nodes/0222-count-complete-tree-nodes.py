@@ -18,6 +18,7 @@ class Solution:
         func(ans, root)
         return ans[0]
         """
+        """
         from queue import Queue
         q, ans = Queue(), 0
         q.put(root)
@@ -28,4 +29,8 @@ class Solution:
                 q.put(node.left)
                 q.put(node.right)
         return ans
+        """
+        def func(root):
+            return 0 if root is None else 1 + func(root.left) + func(root.right)        
+        return func(root)
         
