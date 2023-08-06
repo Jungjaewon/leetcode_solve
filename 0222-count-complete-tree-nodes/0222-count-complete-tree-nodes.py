@@ -30,7 +30,10 @@ class Solution:
                 q.put(node.right)
         return ans
         """
+        """
         def func(root):
             return 0 if root is None else 1 + func(root.left) + func(root.right)        
         return func(root)
+        """
+        return 0 if root is None else 1 + self.countNodes(root.left) + self.countNodes(root.right)
         
