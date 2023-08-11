@@ -21,6 +21,7 @@ class Solution:
                     return False
         return True
         """
+        """
         c = Counter(str(n) + str(n * 2) + str(n * 3))
         for i in range(0, 10):
             i = str(i)
@@ -30,4 +31,12 @@ class Solution:
                 if c[i] != 1:
                     return False
         return True
+        """
+        a = str(n) + str(n * 2) + str(n * 3)
+        if '0' in a:
+            return False
+        if len(a) != len(set(a)):
+            return False
+        return sum([int(x) for x in a]) == 45
+        
         
