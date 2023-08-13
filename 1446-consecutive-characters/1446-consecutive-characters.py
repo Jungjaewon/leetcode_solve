@@ -36,8 +36,6 @@ class Solution:
             else:
                 ans = max(ans, cnt)
                 temp_c, cnt = c, 1
-            ans = max(ans, cnt)
-            
-        return ans
+        return max(ans, cnt)
         
         
