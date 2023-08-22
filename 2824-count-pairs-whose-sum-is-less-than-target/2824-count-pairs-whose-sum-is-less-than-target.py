@@ -21,10 +21,7 @@ class Solution:
         #return sum(map(lambda x: x[0]+x[1] < target, combinations(nums, 2)))
         #https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/discuss/3937200/Python-Elegant-and-Short-or-Brute-Force-vs-Greedy-or-O(n*log(n))
         nums.sort()
-
-        lo, hi = 0, len(nums) - 1
-        pairs = 0
-
+        lo, hi, pairs = 0, len(nums) - 1, 0
         while lo < hi:
             if nums[lo] + nums[hi] < target:
                 pairs += hi - lo
