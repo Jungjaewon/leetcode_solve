@@ -3,7 +3,13 @@ class Solution:
         """
         return ''.join([ w[0] for w in words]) == s
         """
+        """
         ans = list()
         for w in words:
             ans.append(w[0])
         return ''.join(ans) == s
+        """
+        ans = ""
+        for w in words:
+            ans += w[0]
+        return ans == s
