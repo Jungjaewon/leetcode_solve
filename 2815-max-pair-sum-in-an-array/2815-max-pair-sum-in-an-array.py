@@ -26,6 +26,7 @@ class Solution:
                     ans = max(ans, a + b)
         return ans
         """
+        """
         ans = -1
         a_dict = defaultdict(list)
         for num in nums:
@@ -36,3 +37,32 @@ class Solution:
                 sorted_n = sorted(a_dict[n])
                 ans = max(ans, sorted_n[-1] + sorted_n[-2])
         return ans
+        """
+        ans = -1
+        a_dict = defaultdict(list)
+        for num in nums:
+            a_dict[max(list(str(num)))].append(num)
+        max_key = sorted(list(a_dict.keys()))[-1]
+        for n in a_dict:
+            if len(a_dict[n])> 1:
+                def find_n(items):
+                    if len(items) == 2:
+                        return items
+                    else:
+                        print(items)
+                        f,s = -1, -1
+                        for k in items:
+                            if k > f:
+                                s = f
+                                f = k
+                            elif k <= f and k > s:
+                                s = k
+                        return f,s    
+                a,b = find_n(a_dict[n])
+                print(a,b)
+                ans = max(ans, a + b)
+        return ans
+    
+    
+    
+    
