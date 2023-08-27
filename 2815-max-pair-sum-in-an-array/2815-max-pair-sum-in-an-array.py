@@ -49,7 +49,6 @@ class Solution:
                     if len(items) == 2:
                         return items
                     else:
-                        print(items)
                         f,s = -1, -1
                         for k in items:
                             if k > f:
@@ -59,7 +58,6 @@ class Solution:
                                 s = k
                         return f,s    
                 a,b = find_n(a_dict[n])
-                print(a,b)
                 ans = max(ans, a + b)
         return ans
     
