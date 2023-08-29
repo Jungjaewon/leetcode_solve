@@ -4,8 +4,6 @@ class Solution:
         for n in arr:
             if c[n] == 1:
                 ans_list.append(n)
-        
-        print(ans_list)
         if k <= len(ans_list):
             return ans_list[k - 1]
         else:
