@@ -14,6 +14,7 @@ class Solution:
                 ans.append(p - dis if dis is not None else p)
         return ans
         """
+        """
         ans = list()
         for idx, p in enumerate(prices):
             if idx + 1 == len(prices):
@@ -25,4 +26,14 @@ class Solution:
                         dis = prices[n]
                         break
                 ans.append(p - dis if dis is not None else p)
+        return ans
+        """
+        ans = list()
+        for idx, p in enumerate(prices):
+            dis = None
+            for n in range(idx + 1, len(prices)):
+                if p >= prices[n]:
+                    dis = prices[n]
+                    break
+            ans.append(p - dis if dis is not None else p)
         return ans
