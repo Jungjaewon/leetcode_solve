@@ -16,8 +16,8 @@ class Solution:
         else:
             return 0
         """
+        """
         ans = [0]
-        
         def func(root: Optional[TreeNode], low: int, high: int):
             if not root:
                 return
@@ -32,3 +32,18 @@ class Solution:
                 return
         func(root, low, high)
         return ans[0]
+        """
+        from queue import Queue
+        Q, ans = Queue(), 0
+        Q.put(root)
+        while Q.qsize():
+            node = Q.get()
+            if node.left:
+                Q.put(node.left)
+            if node.right:
+                Q.put(node.right)
+            if low <= node.val and node.val <= high:
+                ans += node.val
+        return ans
+        
+        
