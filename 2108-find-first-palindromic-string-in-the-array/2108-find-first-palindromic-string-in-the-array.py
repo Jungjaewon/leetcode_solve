@@ -1,5 +1,6 @@
 class Solution:
     def firstPalindrome(self, words: List[str]) -> str:
+        """
         ans = list()
         def check(s):
             s_l = len(s)
@@ -20,3 +21,8 @@ class Solution:
                 ans.append(word)
         #return sorted(ans)[0] if len(ans) else ""
         return ans[0] if len(ans) else ""
+        """
+        for word in words:
+            if word == word[::-1]:
+                return word
+        return ""
