@@ -1,17 +1,13 @@
 class Solution:
-    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
-        
-        #if source == destination:
-        #    return True
-        
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:        
         adj_dict = defaultdict(list)
         for edge in edges:
             s,e = edge
             adj_dict[s].append(e)
             adj_dict[e].append(s)
         
-        for edge in adj_dict:
-            adj_dict[edge] = list(set(adj_dict[edge]))
+        #for edge in adj_dict:
+        #    adj_dict[edge] = list(set(adj_dict[edge]))
         
         if destination in adj_dict[source]:
             return True
