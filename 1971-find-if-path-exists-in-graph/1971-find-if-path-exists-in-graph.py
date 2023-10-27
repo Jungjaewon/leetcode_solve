@@ -1,8 +1,8 @@
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         
-        if source == destination:
-            return True
+        #if source == destination:
+        #    return True
         
         adj_dict = defaultdict(list)
         for edge in edges:
