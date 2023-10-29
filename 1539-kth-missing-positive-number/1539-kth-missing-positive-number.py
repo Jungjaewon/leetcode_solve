@@ -1,6 +1,6 @@
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
-        pos_int = list(range(1, 10001))
+        pos_int = list(range(1, 2001))
         arr_set = set(arr)
         ans = list()
         for n in pos_int:
