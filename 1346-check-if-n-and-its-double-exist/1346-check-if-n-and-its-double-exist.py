@@ -3,7 +3,6 @@ class Solution:
         a_dict = defaultdict(list)
         for i, n in enumerate(arr):
             a_dict[n].append(i)
-        print(f'a_dict : {a_dict}')
         for i, n in enumerate(arr):
             key = int(n * 2)
             idx_list = a_dict[key]
