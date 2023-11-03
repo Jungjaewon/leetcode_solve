@@ -19,7 +19,6 @@ class Solution:
         left_s, right_s = 0, sum(nums[1:])
         
         for idx in range(len(nums)):
-            print(idx, left_s, right_s)
             if left_s == right_s:
                 return idx
             else:
