@@ -1,6 +1,6 @@
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
-        
+        """
         if n == 1:
             return True
         elif n == 0 :
@@ -12,3 +12,10 @@ class Solution:
                 else:
                     n = n // 2
             return True
+        """
+        if n <= 0:
+            return False
+        
+        power = round(math.log(n, 2))
+        return 2 ** power == n
+                    
