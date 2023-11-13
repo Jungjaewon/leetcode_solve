@@ -8,3 +8,4 @@ class Solution:
                         if nums[a] + nums[b] + nums[c] == nums[d]:
                             ans += 1
         return ans
+    #https://leetcode.com/problems/count-special-quadruplets/discuss/1456709/Python-99-Clean-Code-Walkthrough-From-O(4)-greater-O(3)-greater-O(2)
