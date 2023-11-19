@@ -18,4 +18,5 @@ class Solution:
         
         power = round(math.log(n, 2))
         return 2 ** power == n
+    #https://leetcode.com/problems/power-of-two/discuss/4260974/SOLVED-(ONE-LINER-!!!-)-BEATS-100-(FULLY-EXPLAINED)-%2B-SURPRISE-AT-END!
                     
