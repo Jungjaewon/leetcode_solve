@@ -15,13 +15,11 @@ class Solution:
             if node is None:
                 return False
             node_str = tree2str(node)
-            print(f'node_str : {node_str}')
             if node_str == sub_str:
                 return True
             else:
                 return func(node.left, sub_str) or func(node.right, sub_str) 
         sub_str = tree2str(subRoot)
-        print(sub_str)
         return func(root, sub_str)
         
         
