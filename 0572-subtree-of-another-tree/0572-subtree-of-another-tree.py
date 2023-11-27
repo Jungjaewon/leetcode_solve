@@ -38,5 +38,5 @@ class Solution:
                 return func(node.left, sub_str) or func(node.right, sub_str) 
         sub_str = tree2str(subRoot)
         return func(root, sub_str)
-        
+        # https://leetcode.com/problems/subtree-of-another-tree/discuss/4150652/Python-or-Easy-or-Tree-or-Subtree-of-Another-Tree
         
