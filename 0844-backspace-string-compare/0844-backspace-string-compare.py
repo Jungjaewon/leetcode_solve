@@ -21,8 +21,5 @@ class Solution:
                     cnt -= 1
                     continue
                 t_result.append(c)
-        
-            
-        print(s_result[::-1], t_result[::-1])
         return ''.join(s_result[::-1]) == ''.join(t_result[::-1])
         
