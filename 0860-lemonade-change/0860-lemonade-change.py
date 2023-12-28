@@ -2,7 +2,6 @@ class Solution:
     def lemonadeChange(self, bills: List[int]) -> bool:
         change_dict = defaultdict(int)
         for b in bills:
-            print(f' b : {b}, change_dict : {change_dict}')
             if b == 5:
                 change_dict[5] += 1
             elif b == 10:
