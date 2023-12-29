@@ -30,6 +30,7 @@ class Solution:
                     ans.add(s)
         return sorted(list(ans))
         """
+        """
         ans = set()
         candis = list(itertools.combinations(digits, 3))
         for x,y,z in candis:
@@ -38,6 +39,20 @@ class Solution:
                     continue
                 else:
                     s = int(f'{i}{j}{k}')
+                    if s & 1 == 0:
+                        ans.add(s)
+        return sorted(list(ans))
+        """
+        ans = set()
+        candis = list(itertools.combinations(digits, 3))
+        for x,y,z in candis:
+            for i,j,k in list(itertools.permutations([x,y,z],3)):
+                if i == 0:
+                    continue
+                else:
+                    s = int(f'{i}{j}{k}')
+                    if s in ans:
+                        continue
                     if s & 1 == 0:
                         ans.add(s)
         return sorted(list(ans))
