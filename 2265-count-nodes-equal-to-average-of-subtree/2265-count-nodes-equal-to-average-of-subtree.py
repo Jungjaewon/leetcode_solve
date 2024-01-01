@@ -31,6 +31,7 @@ class Solution:
         func(root)
         return ans[0]
         """
+        """
         ans = [0]
         def func(node:TreeNode):
             if node is None:
@@ -52,3 +53,17 @@ class Solution:
                 return v_list
         func(root)
         return ans[0]
+        """
+        self.ans = 0
+        def func(node:TreeNode):
+            if node is None:
+                return 0,0
+            left_sum, left_cnt = func(node.left)
+            right_sum, right_cnt = func(node.right)
+            avg = int((node.val + left_sum + right_sum) / float(1 + left_cnt + right_cnt))
+            if node.val == avg:
+                self.ans += 1
+            
+            return node.val + left_sum + right_sum, left_cnt + right_cnt + 1
+        func(root)
+        return self.ans
