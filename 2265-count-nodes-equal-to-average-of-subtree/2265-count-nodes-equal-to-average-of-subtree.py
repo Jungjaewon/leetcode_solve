@@ -36,7 +36,7 @@ class Solution:
             if node is None:
                 return []
             else:
-                v,n,v_list = node.val,1,[]
+                v_list = [node.val]
                 if node.left is not None:
                     return_v = func(node.left)
                     if return_v:
@@ -45,12 +45,10 @@ class Solution:
                     return_v = func(node.right)
                     if return_v:
                         v_list.extend(return_v)
-                v += sum(v_list)
-                n += len(v_list)
-                avg = int(v / float(n))
+                avg = int( sum(v_list) / float(len(v_list)))
                 #print(f'v : {node.val}, v_list : {v_list}, n : {n}, {avg == node.val}, avg : {avg}')
                 if avg == node.val:
                     ans[0] += 1
-                return [node.val] + v_list
+                return v_list
         func(root)
         return ans[0]
