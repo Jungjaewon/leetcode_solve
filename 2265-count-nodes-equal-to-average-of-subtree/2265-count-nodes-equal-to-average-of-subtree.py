@@ -60,10 +60,12 @@ class Solution:
                 return 0,0
             left_sum, left_cnt = func(node.left)
             right_sum, right_cnt = func(node.right)
-            avg = int((node.val + left_sum + right_sum) / float(1 + left_cnt + right_cnt))
+            total_sum = (node.val + left_sum + right_sum)
+            total_cnt = 1 + left_cnt + right_cnt 
+            avg = total_sum // total_cnt
             if node.val == avg:
                 self.ans += 1
             
-            return node.val + left_sum + right_sum, left_cnt + right_cnt + 1
+            return total_sum, total_cnt
         func(root)
         return self.ans
