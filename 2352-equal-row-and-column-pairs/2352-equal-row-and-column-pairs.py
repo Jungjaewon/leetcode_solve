@@ -1,7 +1,7 @@
 class Solution:
     def equalPairs(self, grid: List[List[int]]) -> int:
         ans = 0
-        col_list = list(zip(*grid))
+        #col_list = list(zip(*grid))
         for i in range(len(grid)):
             for j in range(len(grid[i])):
                 temp_list1, temp_list2 = [], []
