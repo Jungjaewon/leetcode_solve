@@ -43,3 +43,4 @@ class Solution:
                 temp.append(grid[i + 2][j + 2])
                 ans = max(sum(temp), ans)
         return ans
+        # https://leetcode.com/problems/maximum-sum-of-an-hourglass/discuss/2678195/Python-Elegant-and-Short
