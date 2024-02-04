@@ -14,6 +14,7 @@ class Solution:
             
         return ans
         """
+        # https://leetcode.com/problems/count-square-submatrices-with-all-ones/discuss/3964606/Superb-Logic-Python3-greaterDP
         row=len(matrix)
         col=len(matrix[0])
         dp=[[0]*col for i in range(row)]
