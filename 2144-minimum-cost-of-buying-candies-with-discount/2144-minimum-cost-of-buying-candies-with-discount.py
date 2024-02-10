@@ -1,5 +1,6 @@
 class Solution:
     def minimumCost(self, cost: List[int]) -> int:
+        """
         cost = sorted(cost)
         ans = 0
         while len(cost):
@@ -12,5 +13,10 @@ class Solution:
             else:
                 ans += sum(cost)
                 cost = []
-        
+        return ans
+        """
+        cost, ans = sorted(cost)[::-1], 0
+        for i in range(len(cost)):
+            if (i + 1) % 3 != 0:
+                ans += cost[i]
         return ans
