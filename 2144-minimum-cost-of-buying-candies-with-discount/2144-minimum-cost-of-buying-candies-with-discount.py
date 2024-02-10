@@ -15,8 +15,11 @@ class Solution:
                 cost = []
         return ans
         """
+        """
         cost, ans = sorted(cost)[::-1], 0
         for i in range(len(cost)):
             if (i + 1) % 3 != 0:
                 ans += cost[i]
         return ans
+        """
+        return sum([ c for i, c in enumerate(sorted(cost)[::-1]) if (i + 1) % 3 != 0 ])
