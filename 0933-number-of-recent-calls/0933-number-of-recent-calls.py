@@ -17,12 +17,10 @@ class RecentCounter:
         #cnt = len([1 for x in self.requests if t - 3000 <= x and x <= t]) + 1
         #self.requests.append(t)
         #return cnt
-        
+        # https://leetcode.com/problems/number-of-recent-calls/discuss/3568692/Beating-99.34-Python-Easiest-Solution
         self.q.append(t)
-        
         while t - self.q[0] > 3000:
             self.q.popleft()
-            
         return len(self.q)
         
         
