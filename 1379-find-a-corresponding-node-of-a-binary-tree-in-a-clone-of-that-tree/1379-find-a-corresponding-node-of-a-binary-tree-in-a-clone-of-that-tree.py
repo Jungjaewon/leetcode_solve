@@ -7,6 +7,7 @@
 
 class Solution:
     def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
+        """
         ans = [None]
         def func(ans: List, node: TreeNode, target: TreeNode):
             if node is None:
@@ -19,3 +20,18 @@ class Solution:
                 func(ans, node.right, target)
         func(ans, cloned, target)
         return ans[0]
+        """
+        from queue import Queue
+        q = Queue()
+        q.put(cloned)
+        while q.qsize():
+            temp = q.get()
+            if temp is None:
+                continue
+            else:
+                if temp.val == target.val:
+                    return temp
+                else:
+                    q.put(temp.left)
+                    q.put(temp.right)
+        return None
