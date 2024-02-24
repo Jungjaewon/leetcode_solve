@@ -13,10 +13,19 @@ class Solution:
                 #print(i,j, one_row, one_col, (len(grid) - one_row), (len(grid[i]) - one_col), ans[i][j])
         return ans
         """
+        """
         ans = [[0] * len(grid[0]) for _ in range(len(grid))]
         row_sum = [sum(line) for line in grid]
         col_sum = [sum(line) for line in zip(*grid)]
         for i in range(len(row_sum)):
             for j in range(len(col_sum)):
                 ans[i][j] = row_sum[i] + col_sum[j] - (len(grid) - row_sum[i]) - (len(grid[i]) - col_sum[j])
+        return ans
+        """
+        ans = [[0] * len(grid[0]) for _ in range(len(grid))]
+        row_sum = [sum(line) for line in grid]
+        col_sum = [sum(line) for line in zip(*grid)]
+        for i in range(len(row_sum)):
+            for j in range(len(col_sum)):
+                ans[i][j] = 2 * row_sum[i] + 2 * col_sum[j] - len(grid) - len(grid[i])
         return ans
