@@ -8,7 +8,7 @@ class Solution:
                 print(idxs)
                 a = int("".join([num[x] for x,c in enumerate(num) if x in idxs]))
                 b = int("".join([num[x] for x,c in enumerate(num) if x not in idxs]))
-                print(a,b)
+                #print(a,b)
                 ans[0] = min(ans[0], a + b)
             for i in range(len(num)):
                 if i not in idxs:
