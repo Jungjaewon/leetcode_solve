@@ -1,5 +1,6 @@
 class Solution:
     def minimumSum(self, num: int) -> int:
+        """
         ans, num = [10e4], sorted(str(num))
         def func(num, idxs):
             if len(idxs) >= len(num):
@@ -17,3 +18,15 @@ class Solution:
                     del idxs[-1]
         func(num, [])
         return ans[0]
+        """
+        ans, num = 10e4, sorted(str(num))
+        for k in range(1,3):
+            candidates = list(itertools.combinations(list(range(len(num))),k))
+            for candi in candidates:
+                print([num[x] for x in range(len(num)) if x in candi])
+                a = int("".join([num[x] for x in range(len(num)) if x in candi]))
+                b = int("".join([num[x] for x in range(len(num)) if x not in candi]))
+                ans = min(ans, a + b)
+        return ans
+        
+                            
