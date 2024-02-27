@@ -23,7 +23,6 @@ class Solution:
         for k in range(1,3):
             candidates = list(itertools.combinations(list(range(len(num))),k))
             for candi in candidates:
-                print([num[x] for x in range(len(num)) if x in candi])
                 a = int("".join([num[x] for x in range(len(num)) if x in candi]))
                 b = int("".join([num[x] for x in range(len(num)) if x not in candi]))
                 ans = min(ans, a + b)
