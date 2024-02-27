@@ -19,6 +19,7 @@ class Solution:
         func(num, [])
         return ans[0]
         """
+        """
         ans, num = 10e4, sorted(str(num))
         for k in range(1,3):
             candidates = list(itertools.combinations(list(range(len(num))),k))
@@ -27,5 +28,7 @@ class Solution:
                 b = int("".join([num[x] for x in range(len(num)) if x not in candi]))
                 ans = min(ans, a + b)
         return ans
-        
+        """
+        num = sorted(str(num))
+        return int(f'{num[0]}{num[2]}') + int(f'{num[1]}{num[3]}') 
                             
