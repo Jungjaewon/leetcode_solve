@@ -8,6 +8,4 @@ class Solution:
             elif ')' == c:
                 ans = max(ans, o_cnt)
                 o_cnt -= 1
-        
-        
         return ans
