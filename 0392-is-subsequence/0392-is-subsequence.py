@@ -56,6 +56,7 @@ class Solution:
                 if n == -1 or m == -1:
                     return 0
                 if dp[n][m] != -1:
+                    print("sdsdsdsd")
                     return dp[n][m]
                 if s[n] == t[m]:
                     dp[n][m] = 1 + func(s,t, n -1, m -1, dp)
