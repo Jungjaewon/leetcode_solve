@@ -11,3 +11,4 @@ class Solution:
             s += 1
             e -= 1
         return ''.join(s_list)
+    #https://leetcode.com/problems/lexicographically-smallest-palindrome/discuss/3547083/Python3-Two-Lines-Use-Smaller-characters
