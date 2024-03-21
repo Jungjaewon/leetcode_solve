@@ -8,4 +8,6 @@ class Solution:
                 num1.append(n)
             else:
                 num2.append(n)
-        return int(''.join(num1)) + int(''.join(num2)) 
+        return int(''.join(num1)) + int(''.join(num2))
+    # return int((w:=''.join(sorted(str(num))))[::2])+int(w[1::2])
+    # https://leetcode.com/problems/split-with-minimum-sum/discuss/4825375/Python-one-line-solution
